@@ -87,7 +87,7 @@ import Image from 'next/image';
                 <Link
                   p={2}
                   href={navItem.href ?? '#'}
-                  fontSize={'sm'}
+                  fontSize={'xl'}
                   fontWeight={500}
                   color={linkColor}
                   _hover={{

@@ -17,9 +17,13 @@ export default function Home() {
       {!isLoading && <Flex direction={"column"} >
         <Grid marginX={20} marginY={10} justifyContent={'center'} templateColumns={"repeat(2,1fr)"} gap={6}>
           <GridItem>
-            <Flex paddingY={50} direction={"column"}>
-              <Heading>{data.title}</Heading>
+            <Flex paddingY={50} gap={5} direction={"column"}>
+              <Heading>Title:</Heading>
+              <Heading size={"md"} >{data.title}</Heading>
               <Text>{data.tagline}</Text>
+              <Heading>Description:</Heading>
+              <Text>{data.overview}</Text>
+              <Heading>Genres:</Heading>
               <HStack paddingY={5} spacing={4}>
               {data.genres.map(item=>(
                   <Tag size={'lg'} key={item.id} variant='solid' colorScheme='teal'>
@@ -27,6 +31,7 @@ export default function Home() {
                   </Tag>
               ))}
               </HStack>
+              <Heading>Share:</Heading>
               <Button target={'_blank'} bg={'yellow.500'} as={"a"} href={`https://www.imdb.com/title/${data.imdb_id}`}>
                 IMDB
               </Button>
